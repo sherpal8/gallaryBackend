@@ -19,6 +19,14 @@
     "seed-test": "npm run setup-test && NODE_ENV=test knex seed:run && npm run query",
     "fetch-dev-data": "node ./utils/fetch-dev-data.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sherpal8/gallaryBackend.git"
+  },
+  "bugs": {
+    "url": "https://github.com/sherpal8/gallaryBackend/issues"
+  },
+  "homepage": "https://github.com/sherpal8/gallaryBackend#readme",
   "keywords": [],
   "author": "gallary team",
   "license": "ISC",

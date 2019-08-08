@@ -27,7 +27,7 @@ describe("/api", () => {
   describe("/users", () => {
     // POST to users
     describe("POST method", () => {
-      it("status 201: responds with newly created user", () => {
+      it("status 200: responds with newly created user", () => {
         return request
           .post("/api/users")
           .send({ profilername: "zazzyzoo", secretpass: "secret123" })
