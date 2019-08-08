@@ -2,8 +2,12 @@
   "name": "gallarydb",
   "version": "1.0.0",
   "description": "gallary database",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
+    "start": "node listen.js",
+    "seed:prod": "NODE_ENV=production DB_URL=$(heroku config:get DATABASE_URL) knex seed:run",
+    "migrate-latest:prod": "NODE_ENV=production DB_URL=$(heroku config:get DATABASE_URL) knex migrate:latest",
+    "migrate-rollback:prod": "NODE_ENV=production DB_URL=$(heroku config:get DATABASE_URL) knex migrate:rollback",
     "test": "npm run seed-test && mocha spec",
     "setup-dev": "psql -f db/dev-setup.sql",
     "setup-test": "psql -f db/test-setup.sql",
