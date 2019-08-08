@@ -1,4 +1,4 @@
-users = [
+module.exports = [
   {
     userName: "sherpie",
     password: "dangermouse",
@@ -7,5 +7,3 @@ users = [
     avatarUrl: "urls"
   }
 ];
-
-module.exports = user;

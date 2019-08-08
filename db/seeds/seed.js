@@ -1,4 +1,4 @@
-const { userData } = require("../data/test-data");
+const { userData } = require("../data/index");
 
 exports.seed = function(knex, Promise) {
   const userInsertion = knex("users").insert(userData);
