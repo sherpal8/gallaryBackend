@@ -1,11 +1,13 @@
 const { userData } = require("../data/test-data");
 
 exports.seed = function(knex, Promise) {
-  return knex
-    .insert(userData)
-    .into("users")
-    .returning("*")
-    .then(users => {
-      console.log(`${users.length} users were inserted`);
+  const userInsertion = knex("users").insert(userData);
+  return knex.migrate
+    .rollback()
+    .then(() => knex.migrate.latest())
+    .then(() => {
+      return knex("users")
+        .insert(userData)
+        .returning("*");
     });
 };
