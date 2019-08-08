@@ -1,0 +1,6 @@
+
+DROP DATABASE IF EXISTS gallary_test;
+DROP DATABASE IF EXISTS gallary;
+
+CREATE DATABASE gallary_test;
+CREATE DATABASE gallary;

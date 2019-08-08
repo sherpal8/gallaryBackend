@@ -11,3 +11,8 @@ exports.up = function(knex) {
     usersTable.string("avatarurl").notNullable();
   });
 };
+
+exports.down = function(knex, Promise) {
+  // console.log("users table destoryed");
+  return knex.schema.dropTable("users");
+};
