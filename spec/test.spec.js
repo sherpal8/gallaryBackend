@@ -82,7 +82,16 @@ describe("/api", () => {
     // GET user data
     describe("GET method", () => {
       it("GET responds with a status of 200", () => {
-        return request.get("/api/users/sherpie").expect(200);
+        return request
+          .get("/api/users/sherpie")
+          .expect(200)
+          .then(({ body: { user } }) => {
+            expect(user).to.eql({
+              profiler_id: 1,
+              profilername: "sherpie",
+              secretpass: "dangermouse"
+            });
+          });
       });
     });
     // Error handling
