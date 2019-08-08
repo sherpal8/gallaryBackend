@@ -5,5 +5,5 @@ exports.postDataModel = newUserData => {
     .insert(newUserData)
     .into("users")
     .returning("*")
-    .then(users => users[0]);
+    .then(user => user[0]);
 };
