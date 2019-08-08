@@ -1,0 +1,29 @@
+{
+  "name": "gallarydb",
+  "version": "1.0.0",
+  "description": "gallary database",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run seed-test && mocha spec",
+    "setup-dev": "psql -f db/dev-setup.sql",
+    "setup-test": "psql -f db/test-setup.sql",
+    "query": "psql -f query.sql > out.txt",
+    "seed-dev": "npm run setup-dev && knex seed:run",
+    "seed-test": "npm run setup-test && NODE_ENV=test knex seed:run && npm run query",
+    "fetch-dev-data": "node ./utils/fetch-dev-data.js"
+  },
+  "keywords": [],
+  "author": "gallary team",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "chai-sorted": "^0.2.0",
+    "mocha": "^6.2.0",
+    "supertest": "^4.0.2"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "knex": "^0.19.1",
+    "pg": "^7.12.0"
+  }
+}
