@@ -7,28 +7,31 @@ const baseConfig = {
     directory: "./db/migrations"
   },
   seeds: {
-    directory: "./db/seed"
+    directory: "./db/seeds"
   }
 };
 
 const customConfig = {
   development: {
     connection: {
-      database: "gallary_database"
+      database: "gallary_test"
       // username,
       // password
     }
   },
   test: {
     connection: {
-      database: "gallary_database_test"
+      database: "gallary_test"
       // username,
       // password
     }
   },
+
+  // ...
   production: {
     connection: `${DB_URL}?ssl=true`
   }
 };
+// const dbConfig = { ...customConfig[ENV], ...baseConfig };
 
 module.exports = { ...customConfig[ENV], ...baseConfig };
